@@ -11,8 +11,8 @@ $(window).on('load', function () {
 /* ============================================
       Team Section - Owl Carousel 2-2.2.1
 ============================================ */
-$(function() {
-    $("#team-right").owlCarousel({
+$(function () {
+    $('#team-right').owlCarousel({
         items: 2,
         autoplay: true,
         smartSpeed: 700,
@@ -24,19 +24,31 @@ $(function() {
     });
 });
 
+/* ============================================
+        Progress Bar Animations on Scroll
+============================================ */
+$(function () {
 
+    $('#progress-elements').waypoint(function () {
+        $('.progress-bar').each(function () {
+            $(this).animate({
+                width: $(this).attr("aria-valuenow") + "%"
+            }, 1000);
+        });
+        this.destroy();
+    }, {
+        offset: 'bottom-in-view'
+    });
 
+});
 
+/* ============================================
+              Responsive Tabs
+============================================ */
+$(function () {
 
+    $('#services-tabs').responsiveTabs({
+        animation: 'slide'
+    });
 
-
-
-
-
-
-
-
-
-
-
-
+});
